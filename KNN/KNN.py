@@ -44,7 +44,7 @@ def classify0(inX, dataSet, labels, k):
         voteIlabel = labels[sortedDistIndicies[i]]
         classCount[voteIlabel] = classCount.get(voteIlabel, 0) + 1
     sortedClassCount = sorted(classCount.items(), key = operator.itemgetter(1), reverse = True)
-    return sortedClassCount
+    return sortedClassCount[0][0]
 
 def datingClassTest():
     hoRatio = 0.1 # 设置测试数据比例，
@@ -75,5 +75,5 @@ def classifyPerson():
     print("you will probably like this person :" , resultList[classifierResult -1])
 
 if __name__ == '__main__':
-    datingClassTest()
+    classifyPerson()
   
